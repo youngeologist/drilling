@@ -33,13 +33,13 @@ def show_top_sidebar(df):
 # #end_function_show_top_sidebar
 
 def main():
-    image = Image.open('./data/geostrat100.png')
+    image = Image.open('geostrat100.png')
     st.sidebar.image(image)
 
     st.sidebar.subheader("DRILLING TIME DATA", divider=True)
     welldata = st.sidebar.file_uploader("Upload XLS file with TIME data at the first column. Data header at the first row only")
     if welldata is None:
-       welldata = './data/drilling_data.xls'
+       welldata = 'drilling_data.xls'
     
     df = load_drillingdata(welldata)
     timecolumn = df.columns[0]
